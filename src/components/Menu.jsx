@@ -19,8 +19,10 @@ function Menu() {
 
   return (
     <div>
-      <div className="Desserts">
-        <MenuItem item={transformedData[0]}/>
+      <div className="Desserts p-8 grid grid-cols-3 gap-4 w-fit">
+        {transformedData.map((item)=>{
+          return <MenuItem item={item} key={item.name}/>
+        })}
       </div>
       <div className="Cart"></div>
     </div>
