@@ -16,6 +16,7 @@ const cartRedcuer=(state,action)=>{
                         item.no_items+=1
                         item.total_item_price+=item.unit_price
                     }
+                    return item
                 })
             }
         case "REMOVE_FROM_CART":
@@ -27,6 +28,7 @@ const cartRedcuer=(state,action)=>{
                         item.no_items-=1
                         item.total_item_price-=item.unit_price
                     }
+                    return item
                 })
             }
         case "UPDATE_CART":

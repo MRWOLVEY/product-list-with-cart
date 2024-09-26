@@ -22,7 +22,7 @@ function Menu({state,dispatch}) {
       <h1 className='text-3xl mb-4 font-bold'>Desserts</h1>
       <div className="Desserts grid grid-cols-3 gap-4 w-fit">
         {transformedData.map((item,i)=>{
-          return <MenuItem item={item} key={i}/>
+          return <MenuItem item={item} key={i} id={i} state={state} dispatch={dispatch}/>
         })}
       </div>
       <div className="Cart"></div>

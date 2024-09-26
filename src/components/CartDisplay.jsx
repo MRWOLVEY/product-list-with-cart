@@ -4,9 +4,9 @@ function CartDisplay({state,dispatch}) {
 
     useEffect(
         ()=>{
-            console.log(state);
+            console.log("update");
             dispatch({type:"UPDATE_CART"})
-        },[]
+        },[state.items]
     )
 
     return (
