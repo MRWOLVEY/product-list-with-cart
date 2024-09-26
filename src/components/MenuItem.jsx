@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import React from 'react'
 import classNames from 'classnames';
 
-function MenuItem({item,key}) {
+function MenuItem({item}) {
 
     const [active,setActive]=useState(false);
     const [no_items,setNo_items]=useState(0);
