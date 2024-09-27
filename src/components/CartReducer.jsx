@@ -41,6 +41,17 @@ const cartRedcuer=(state,action)=>{
                     return item.total_item_price
                 }))
             }
+        case "RESET_CART_ITEM":
+            return{
+                ...state,
+                items:state.items.map((item,index)=>{
+                    if(index==action.payload.id){
+                        item.no_items=0
+                        item.total_item_price=0
+                    }
+                    return item
+                })
+            }
         default:
             return state
     }

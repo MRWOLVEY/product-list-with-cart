@@ -9,12 +9,8 @@ function MenuItem({item,state,dispatch,id}) {
     const [fillColor,setFillColor]=useState(["#fff","#fff"]);
 
     useEffect(() => {
-      if(no_items>0){
-        setActive(true);
-      }else{
-        setActive(false);
-      }
-    }, [no_items])
+      state.items[id].no_items>0?setActive(true):setActive(false);
+    }, [state.items[id].no_items])
 
     useEffect(() => {
         setFillColor(["#fff","#fff"])
@@ -24,7 +20,7 @@ function MenuItem({item,state,dispatch,id}) {
 
     }
   return (
-    <div className='menu-item block w-fit'>
+    <div className='menu-item block mb-4 w-fit'>
         <div className={classNames('image-and-button relative w-fit mb-4 border-2 rounded-lg box-border transition duration-100',{'border-red-500':active},{'border-[#fcf9f4]':!active})} >
           <img src={item.image.desktop} alt="" className="w-48 rounded-md shadow-inner"/> 
           {!active&&

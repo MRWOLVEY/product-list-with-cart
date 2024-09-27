@@ -18,8 +18,8 @@ function Menu({state,dispatch}) {
   });
 
   return (
-    <div className='block p-8 w-fit'>
-      <h1 className='text-3xl mb-4 font-bold'>Desserts</h1>
+    <div className='block w-fit'>
+      <h1 className='text-3xl mb-5 font-bold p-1'>Desserts</h1>
       <div className="Desserts grid grid-cols-3 gap-4 w-fit">
         {transformedData.map((item,i)=>{
           return <MenuItem item={item} key={i} id={i} state={state} dispatch={dispatch}/>
