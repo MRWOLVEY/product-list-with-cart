@@ -2,7 +2,7 @@ import React from 'react'
 import MenuItem from './MenuItem'
 import data from '../data.json'
 
-function Menu() {
+function Menu({state,dispatch}) { 
 
   const transformedData = data.map((item)=>{
     return {
@@ -18,11 +18,11 @@ function Menu() {
   });
 
   return (
-    <div className='block p-8'>
-      <h1 className='text-3xl mb-4 font-bold'>Desserts</h1>
+    <div className='block w-fit'>
+      <h1 className='text-3xl mb-5 font-bold p-1'>Desserts</h1>
       <div className="Desserts grid grid-cols-3 gap-4 w-fit">
-        {transformedData.map((item)=>{
-          return <MenuItem item={item} key={item.name}/>
+        {transformedData.map((item,i)=>{
+          return <MenuItem item={item} key={i} id={i} state={state} dispatch={dispatch}/>
         })}
       </div>
       <div className="Cart"></div>
