@@ -8,7 +8,6 @@ function CartDisplay({state,dispatch,data}) {
 
     useEffect(
         ()=>{
-            // console.log("update");
             dispatch({type:"UPDATE_CART"})
         },[state.items]
     )
@@ -18,7 +17,7 @@ function CartDisplay({state,dispatch,data}) {
     }
 
     return (
-        <div className='CartDis p-5 rounded-md block bg-white h-fit min-w-72'>
+        <div className='CartDis p-5 rounded-md block bg-white h-fit w-full max-w-96 lg:max-w-72'>
             <h1 className='mb-4 text-lg font-bold text-[hsl(14_86%_42%)]'>Your Cart ({state.total_ni})</h1>
             {state.total_ni>0&&<div className=''>
                 {state.items.map((item,i)=>{
@@ -46,7 +45,7 @@ function CartDisplay({state,dispatch,data}) {
             </div>}
             {state.total_ni===0&&
             <div className='flex flex-col justify-around items-center'>
-                <img className='w-[45%]' src={placeHolder} alt="" />
+                <img className='w-[40%]' src={placeHolder} alt="" />
                 <span className='text-center p-4'><h1 className='text-xs text-[hsl(12_20%_44%)] font-semibold'>Your added items will appear here</h1></span>
                 {/* <Modal state={state} data={data}/> */}
             </div>}
