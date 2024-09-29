@@ -8,7 +8,7 @@ function CartDisplay({state,dispatch,data}) {
 
     useEffect(
         ()=>{
-            console.log("update");
+            // console.log("update");
             dispatch({type:"UPDATE_CART"})
         },[state.items]
     )

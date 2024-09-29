@@ -10,6 +10,7 @@ function MenuItem({item,state,dispatch,id}) {
 
     useEffect(() => {
       state.items[id].no_items>0?setActive(true):setActive(false);
+      setNo_items(state.items[id].no_items);
     }, [state.items[id].no_items])
 
     useEffect(() => {
@@ -34,7 +35,7 @@ function MenuItem({item,state,dispatch,id}) {
               <button className="decrement w-4 h-4 border border-white rounded-full hover:border-orange-700 hover:bg-white " onClick={()=>{setNo_items(no_items-1);dispatch({type:"REMOVE_FROM_CART",payload:{id:id}})}} onMouseOver={() =>{setFillColor(["#c2410c","#fff"])}} onMouseOut={() =>{setFillColor(["#fff","#fff"])}} >
               <svg className='hover:fill-orange-700' id="eweZ5TFaPU21" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 11 11" shapeRendering="geometricPrecision" textRendering="geometricPrecision" project-id="063ad19f5a774737becaeb804d9ba03a" export-id="4b31fb1702a6472eb73575de4527b4ce" cached="false"><rect width="7" height="1" rx="0" ry="0" transform="translate(2 5)" fill={fillColor[0]} strokeWidth="0"/></svg>
               </button>
-              {no_items}
+              {state.items[id].no_items}  
               <button className="increment w-4 h-4 border border-white rounded-full hover:border-orange-700 hover:bg-white " onClick={()=>{setNo_items(no_items+1);dispatch({type:"ADD_TO_CART",payload:{id:id}})}} onMouseOver={() =>{setFillColor(["#fff","#c2410c"])}} onMouseOut={() =>{setFillColor(["#fff","#fff"])}} >
               <svg className='hover:fill-orange-700' id="e1lyWEZaBzV1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 11 11" shapeRendering="geometricPrecision" textRendering="geometricPrecision" project-id="063ad19f5a774737becaeb804d9ba03a" export-id="1a895c57989040769d8562bb6e1d2332" cached="false"><rect width="7" height="1" rx="0" ry="0" transform="translate(2 5)" fill={fillColor[1]} strokeWidth="0"/><rect width="7" height="1" rx="0" ry="0" transform="matrix(0 1-1 0 6 2)" fill={fillColor[1]} strokeWidth="0"/></svg>
               </button>

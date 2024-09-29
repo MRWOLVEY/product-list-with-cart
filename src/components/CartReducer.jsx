@@ -4,10 +4,6 @@ import data from "../data.json"
 const sum = (arr) => {
     return arr.reduce((a, b) => a + b, 0)
 }
-const sumStrings = (arr) => {
-    return arr.reduce((a, b) => Number(a) + Number(b), 0).toString()
-}
-
 
 const transformedData = data.map((item)=>{
     return {
@@ -22,19 +18,6 @@ const transformedData = data.map((item)=>{
     };
   });
 
-  const initial_state={
-    total_ni:0,
-    total_price:0,
-    items:transformedData.map((item,i)=>{
-        return{
-            path:item.image.thumbnail,
-            name:item.name,
-            unit_price:Number(item.price),
-            no_items:0,
-            total_item_price:0//to be changed to 0
-        }   
-    })
-}
 const cartRedcuer=(state,action)=>{
     switch(action.type){
         case "ADD_TO_CART":
@@ -83,7 +66,19 @@ const cartRedcuer=(state,action)=>{
                 })
             }
         case "RESET_CART":
-            return initial_state
+            return {
+                total_ni:0,
+                total_price:0,
+                items:transformedData.map((item,i)=>{
+                    return{
+                        path:item.image.thumbnail,
+                        name:item.name,
+                        unit_price:Number(item.price),
+                        no_items:0,
+                        total_item_price:0
+                    }   
+                })
+            }
         default:
             return state
     }
