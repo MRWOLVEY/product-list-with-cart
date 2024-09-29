@@ -5,6 +5,19 @@ const sum = (arr) => {
     return arr.reduce((a, b) => a + b, 0)
 }
 
+const transformedData = data.map((item)=>{
+    return {
+      ...item,
+      image: {
+        ...item.image,
+        thumbnail: item.image.thumbnail.replace('./','src/'),
+        mobile: item.image.mobile.replace('./','src/'),
+        tablet: item.image.tablet.replace('./','src/'),
+        desktop: item.image.desktop.replace('./','src/'),
+      }
+    };
+  });
+
 const cartRedcuer=(state,action)=>{
     switch(action.type){
         case "ADD_TO_CART":
@@ -50,6 +63,20 @@ const cartRedcuer=(state,action)=>{
                         item.total_item_price=0
                     }
                     return item
+                })
+            }
+        case "RESET_CART":
+            return {
+                total_ni:0,
+                total_price:0,
+                items:transformedData.map((item,i)=>{
+                    return{
+                        path:item.image.thumbnail,
+                        name:item.name,
+                        unit_price:Number(item.price),
+                        no_items:0,
+                        total_item_price:0
+                    }   
                 })
             }
         default:
