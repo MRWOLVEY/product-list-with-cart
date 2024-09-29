@@ -2,7 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import '../index.css'
 
-function Modal({state,data}) {
+function Modal({state,data,dispatch,setModal}) {
+
+    const handleClick = () => {
+        dispatch({type:"RESET_CART"})
+        setModal(false)
+    }
+
   return ReactDOM.createPortal(
     <div className='bg fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex justify-center items-center'>
         <div className="Modal flex flex-col gap-4 w-96 h-fit bg-white p-8 rounded-md scrollable max-h-[100vh]">
@@ -40,7 +46,7 @@ function Modal({state,data}) {
                     })}
             <div className='flex justify-between'><h1 className='text-xs font-semibold flex items-center'>Order Total</h1><span className='text-lg font-bold flex items-center'>${state.total_price.toFixed(2)}</span></div>
             </div>
-            <span className='flex justify-center w-full'><button className='bg-[hsl(14_86%_42%)] w-full h-10 rounded-full text-xs text-white font-semibold hover:bg-[hsl(14_86%_37%)] transition-all'>Start New Order</button></span>
+            <span className='flex justify-center w-full'><button onClick={handleClick} className='bg-[hsl(14_86%_42%)] w-full h-10 rounded-full text-xs text-white font-semibold hover:bg-[hsl(14_86%_37%)] transition-all'>Start New Order</button></span>
         </div>
     </div>,
     document.getElementById('modal')

@@ -32,7 +32,7 @@ function App() {
             total_item_price:0//to be changed to 0
         }   
     })
-}   
+}
 
   const [state,dispatch]=useReducer(cartRedcuer,initial_state)
 
