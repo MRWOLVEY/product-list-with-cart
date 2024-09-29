@@ -4,6 +4,9 @@ import data from "../data.json"
 const sum = (arr) => {
     return arr.reduce((a, b) => a + b, 0)
 }
+const sumStrings = (arr) => {
+    return arr.reduce((a, b) => Number(a) + Number(b), 0).toString()
+}
 
 const cartRedcuer=(state,action)=>{
     switch(action.type){

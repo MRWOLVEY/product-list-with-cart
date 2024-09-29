@@ -11,3 +11,14 @@
 *{
   font-family: "red-hat";
 }
+
+.scrollable {
+  overflow: auto;
+  /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+  /* scrollbar-width: none; Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+/* Hide scrollbar for Chrome, Safari, and newer Edge */
+.scrollable::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
