@@ -41,7 +41,7 @@ function App() {
   },[state])
 
   return (
-    <div className="App bg-[hsl(20_50%_98%)] flex justify-center gap-6 p-8">
+    <div className="App bg-[hsl(20_50%_98%)] flex flex-col lg:flex-row items-center lg:items-start lg:justify-center gap-4 lg:gap-6 p-8">
       <Menu dispatch={dispatch} state={state} data={transformedData}/>
       <CartDisplay state={state} dispatch={dispatch} />
     </div>
