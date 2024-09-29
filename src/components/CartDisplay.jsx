@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import placeHolder from '../assets/images/illustration-empty-cart.svg'
+import placeHolder from '/assets/images/illustration-empty-cart.svg'
 import Modal from './Modal';
 
 function CartDisplay({state,dispatch,data}) {

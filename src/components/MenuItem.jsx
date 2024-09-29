@@ -31,7 +31,7 @@ function MenuItem({item,state,dispatch,id}) {
           {!active&&<div className='flex justify-center absolute w-full -bottom-4'>
             <button className="add_to_cart flex justify-center items-center bg-white w-32 font-semibold text-black text-xs p-2 border border-gray-500 rounded-full
           hover:text-orange-700 hover:border-orange-700 transition duration-100" onClick={() => {setNo_items(no_items+1);dispatch({type:"ADD_TO_CART",payload:{id:id}})}}>
-              <img src="src/assets/images/icon-add-to-cart.svg" alt="" className="w-4 h-4 mr-1" />
+              <img src="assets/images/icon-add-to-cart.svg" alt="" className="w-4 h-4 mr-1" />
               <p>Add to Cart</p>
           </button>
           </div>

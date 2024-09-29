@@ -10,10 +10,10 @@ const transformedData = data.map((item)=>{
       ...item,
       image: {
         ...item.image,
-        thumbnail: item.image.thumbnail.replace('./','src/'),
-        mobile: item.image.mobile.replace('./','src/'),
-        tablet: item.image.tablet.replace('./','src/'),
-        desktop: item.image.desktop.replace('./','src/'),
+        thumbnail: item.image.thumbnail.replace('./','/'),
+        mobile: item.image.mobile.replace('./','/'),
+        tablet: item.image.tablet.replace('./','/'),
+        desktop: item.image.desktop.replace('./','/'),
       }
     };
   });
